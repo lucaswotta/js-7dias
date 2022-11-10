@@ -4,6 +4,10 @@ function formatMoney(value) {
     return `$${value}`;
 }
 
+function formatSplit(value) {
+    return value == 1 ? value + ' person': value + ' people';
+}
+
 function update() {
     let bill = Number(document.getElementById('yourBill').value);
     let tipPercent = Number(document.getElementById('tipInput').value);
@@ -17,7 +21,7 @@ function update() {
     document.getElementById('tipValue').innerHTML = formatMoney(tipValue);
     document.getElementById('totalWithTip').innerHTML = formatMoney(billTotal);
     document.getElementById('billEach').innerHTML = formatMoney(billEach);
-
-    document.getElementById('splitValue').innerHTML = split;
-
+    
+    document.getElementById('splitValue').innerHTML = formatSplit(split);
+    
 }
